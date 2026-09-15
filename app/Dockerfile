@@ -15,7 +15,7 @@ COPY package.json package-lock.json ./
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/dist ./dist
 COPY --from=build /usr/src/app/prisma ./prisma
-COPY --from=build /usr/src/app/generated ./generated
+COPY --from=build /usr/src/app/src/generated ./src/generated
 COPY --from=build /usr/src/app/prisma7.config.ts ./prisma7.config.ts
 COPY docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
